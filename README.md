@@ -100,15 +100,31 @@ Opening `index.html` directly via `file://` will mostly work, but serving it
 over HTTP is recommended since the hero scene uses a dynamic `import('three')`
 and browsers restrict ES module loading over `file://` in some configurations.
 
-## Planned Three.js / GSAP / anime.js / Chart.js integration
+## Three.js / GSAP / anime.js / Chart.js integration
 
-The current implementations in `src/three/heroScene.js`,
-`src/animations/gsap.js`, `src/animations/anime.js`, and
-`src/charts/dashboardCharts.js` preserve the original site's behavior
-(animated hero blocks, scroll reveals, button micro-interactions, and
-dashboard charts). They are intentionally kept in isolated modules so the
-planned retro-pixel redesign phase can restyle or replace what each one
-renders without touching loader/nav/modal logic.
+**Three.js hero scene** (`src/three/heroScene.js`) — a low-poly tactical
+harvest-operations map: a grid of hard-edged field blocks with instanced
+crop rows (two flagged harvest-ready in amber), a right-angled harvest
+route with bins moving toward a packhouse, sky-blue crew markers, a red
+QC-exception marker, and a dashed shipment route with a dispatch truck.
+It renders with `antialias: false` and ink edge-lines to match the pixel
+system, pauses via `IntersectionObserver`/`visibilitychange` when off-screen,
+renders a single static frame under `prefers-reduced-motion` (re-rendering
+on resize), and falls back to a 2D-canvas tactical sketch if the Three.js
+CDN import or WebGL context fails.
+
+**Chart.js dashboards** (`src/charts/dashboardCharts.js`) — five charts
+styled to the pixel system: a stepped harvest-progress sparkline, a yield-
+by-block bar chart (B4 flagged amber), a quality-distribution doughnut
+(QC holds in alert red), a horizontal shipment-readiness bar, and an
+inventory-status doughnut. All use hard ink borders (`borderSkipped: false`,
+zero radius), mono labels/tooltips (square, gold-framed), and colors read
+from the CSS tokens at init so they always match `tokens.css`. Animation is
+disabled under `prefers-reduced-motion`. If Chart.js fails to load, each
+canvas gets a hand-drawn segmented pixel-bar fallback.
+
+**GSAP / anime.js** (`src/animations/`) — scroll reveals, counters, and
+micro-interactions; unchanged, still isolated and optional.
 
 ## Future optional sound effects
 

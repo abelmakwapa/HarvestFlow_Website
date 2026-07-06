@@ -22,6 +22,9 @@
   .tile .rows .r{align-items:flex-start;flex-wrap:wrap}
   .tile .rows .r .end{margin-left:0}
   .ring-wrap{align-items:flex-start}
+  /* stack the command-board chrome so crumbs read on one line each */
+  .board-chrome{flex-direction:column;align-items:flex-start;gap:.7rem}
+  .board-chrome .crumbs svg{flex:none}
   /* full-width, easy-to-tap CTAs */
   .hero-ctas{width:100%}
   .hero-ctas .btn{flex:1 1 100%;justify-content:space-between}

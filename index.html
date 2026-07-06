@@ -100,7 +100,7 @@
       </div>
 
       <div class="hero-visual" data-reveal style="--d:220ms">
-        <div class="hero-scene-wrap" aria-label="Animated harvest blocks and shipment routes">
+        <div class="hero-scene-wrap" role="img" aria-label="Tactical map of harvest operations: field blocks, harvest routes, moving bins, packhouse, and a dispatch route">
           <canvas id="heroScene" class="hero-scene"></canvas>
           <div class="scene-console" aria-hidden="true">
             <span>FIELD OS</span>
@@ -340,7 +340,7 @@
           <div class="tile" data-reveal>
             <div class="tile-head"><span class="t">Harvest Overview</span><span class="badge">On plan</span></div>
             <div class="big">18.4<small> t</small><em>+12%</em></div>
-            <div class="chart-wrap chart-line"><canvas id="harvestProgressChart" aria-label="Harvest progress line chart"></canvas></div>
+            <div class="chart-wrap chart-line"><canvas id="harvestProgressChart" role="img" aria-label="Harvest progress line chart: tonnes picked per hour from 06:00 to 12:00"></canvas></div>
             <div class="rows"><div class="r"><span class="sub">Picked across 5 blocks · 3 crews · 46 bins</span></div></div>
           </div>
 
@@ -356,13 +356,13 @@
 
           <div class="tile" data-reveal style="--d:140ms">
             <div class="tile-head"><span class="t">Block Performance</span><span class="badge">t / block</span></div>
-            <div class="chart-wrap"><canvas id="yieldByBlockChart" aria-label="Yield by block bar chart"></canvas></div>
+            <div class="chart-wrap"><canvas id="yieldByBlockChart" role="img" aria-label="Yield by block bar chart: Block 4 leads at 4.1 tonnes"></canvas></div>
             <div class="rows"><div class="r"><span class="sub">Block 4 leading at 4.1 t · forecast 4.3 t</span></div></div>
           </div>
 
           <div class="tile" data-reveal style="--d:210ms">
             <div class="tile-head"><span class="t">QC Exceptions</span><span class="badge warn">2 open</span></div>
-            <div class="chart-wrap chart-doughnut"><canvas id="qualityDistributionChart" aria-label="Quality distribution doughnut chart"></canvas></div>
+            <div class="chart-wrap chart-doughnut"><canvas id="qualityDistributionChart" role="img" aria-label="Quality distribution doughnut chart: 68% Grade A, 24% Grade B, 8% QC hold"></canvas></div>
             <div class="rows">
               <div class="r"><span class="status-dot y"></span><b>Bruising</b><span class="sub">Block 3 · Grade B hold</span><span class="end">07:31</span></div>
               <div class="r"><span class="status-dot y"></span><b>Undersize</b><span class="sub">Bin 214 · re-grade</span><span class="end">08:02</span></div>
@@ -383,7 +383,7 @@
 
           <div class="tile" data-reveal style="--d:280ms">
             <div class="tile-head"><span class="t">Shipment Queue</span><span class="badge">6 of 8</span></div>
-            <div class="chart-wrap chart-line"><canvas id="shipmentReadinessChart" aria-label="Shipment readiness chart"></canvas></div>
+            <div class="chart-wrap chart-line"><canvas id="shipmentReadinessChart" role="img" aria-label="Shipment readiness chart: 6 orders ready, 1 packing, 1 scheduled"></canvas></div>
             <div class="rows">
               <div class="r"><span class="status-dot g"></span><b>#1082</b><span class="sub">Fresh Direct · 14 pallets</span><span class="end">Ready</span></div>
               <div class="r"><span class="status-dot g"></span><b>#1083</b><span class="sub">Metro Grocers · 9 pallets</span><span class="end">Ready</span></div>
@@ -395,7 +395,7 @@
           <div class="tile" data-reveal style="--d:350ms">
             <div class="tile-head"><span class="t">Inventory by Status</span><span class="badge">Cold store</span></div>
             <div class="ring-wrap">
-              <div class="chart-wrap chart-doughnut"><canvas id="inventoryStatusChart" aria-label="Inventory status chart"></canvas></div>
+              <div class="chart-wrap chart-doughnut"><canvas id="inventoryStatusChart" role="img" aria-label="Inventory status chart: 128 pallets in cold store, 36 staged, 14 open"></canvas></div>
               <div class="ring-meta"><b>72% capacity</b>128 pallets in cold storage<br>36 staged for dispatch</div>
             </div>
           </div>
