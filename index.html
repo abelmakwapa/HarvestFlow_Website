@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Harvest Flow — Harvest operations, from field to fulfillment</title>
+<meta name="description" content="Harvest Flow helps produce teams plan crews, track yields, monitor quality, manage inventory, and prepare shipments from one clear operating layer." />
+<meta name="theme-color" content="#111111" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%230F6E56' d='M24 4c1 10 6 17 18 20-12 3-17 10-18 20-1-10-6-17-18-20 12-3 17-10 18-20z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./src/styles/tokens.css">
+<link rel="stylesheet" href="./src/styles/base.css">
+<link rel="stylesheet" href="./src/styles/layout.css">
+<link rel="stylesheet" href="./src/styles/components.css">
+<link rel="stylesheet" href="./src/styles/responsive.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================= LOADER ============================= -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-center">
+    <div class="loader-brand">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M24 4c1 10 6 17 18 20-12 3-17 10-18 20-1-10-6-17-18-20 12-3 17-10 18-20z"/></svg>
+      Harvest&nbsp;Flow
+    </div>
+    <p class="loader-tag">From field to shipment, every harvest in flow.</p>
+  </div>
+  <div class="loader-progress">
+    <div class="loader-track"><div class="loader-fill" id="loaderFill"></div></div>
+    <div class="loader-meta"><span>Loading</span><span class="loader-count" id="loaderCount">000</span></div>
+  </div>
+</div>
+
+<!-- ============================= HEADER ============================= -->
+<header class="header" id="header">
+  <div class="shell header-inner">
+    <a class="brand" href="#home" aria-label="Harvest Flow — home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M24 4c1 10 6 17 18 20-12 3-17 10-18 20-1-10-6-17-18-20 12-3 17-10 18-20z"/></svg>
+      Harvest&nbsp;Flow
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#workflows">Workflows</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#customers">Customers</a></li>
+        <li><a href="#contact" data-modal-open>Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <button class="btn btn-dark" data-modal-open>Request demo
+        <span class="btn-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-haspopup="dialog" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <span>Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================= HERO ============================= -->
+  <section class="hero" id="home" aria-label="Harvest Flow overview">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2400&auto=format&fit=crop" alt="" fetchpriority="high">
+      <div class="hero-scrim"></div>
+    </div>
+    <div class="hero-watermark" aria-hidden="true">FLOW</div>
+
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow hero-eyebrow">Harvest operations platform</span>
+        <h1>
+          <span class="line"><span class="line-inner" style="--d:250ms">Run every</span></span>
+          <span class="line"><span class="line-inner" style="--d:370ms">harvest from field</span></span>
+          <span class="line"><span class="line-inner" style="--d:490ms">to fulfillment.</span></span>
+        </h1>
+        <p class="hero-sub">Harvest Flow gives produce teams one clear place to plan crews, track yields, monitor quality, manage inventory, and prepare shipments.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-green" data-modal-open>Request demo
+            <span class="btn-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </button>
+          <a class="btn btn-outline" href="#platform">Explore platform
+            <span class="btn-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+        <p class="hero-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          Built for farms, growers, packhouses, co-ops, distributors, and produce logistics teams.
+        </p>
+      </div>
+
+      <div class="hero-visual" data-reveal style="--d:220ms">
+        <div class="hero-scene-wrap" aria-label="Animated harvest blocks and shipment routes">
+          <canvas id="heroScene" class="hero-scene"></canvas>
+          <div class="scene-console" aria-hidden="true">
+            <span>FIELD OS</span>
+            <b>Blocks 03-07 syncing</b>
+          </div>
+        </div>
+      <div class="hero-dash">
+        <div class="dash-card" role="img" aria-label="Preview of the Harvest Flow operations dashboard showing today's harvest, crew progress, quality flags, and shipment readiness">
+          <div class="dash-head">
+            <span class="dash-live"><span class="live-dot"></span>Live · Willow Creek Farms</span>
+            <span class="dash-date" id="dashDate">Mon 6 Jul · 06:42</span>
+          </div>
+          <div class="dash-kpis">
+            <div class="dash-kpi">
+              <span class="k">Today's harvest</span>
+              <span class="v">18.4 t<em>+12% vs plan</em></span>
+            </div>
+            <div class="dash-kpi">
+              <span class="k">Shipments ready</span>
+              <span class="v">6<small>of 8 orders</small></span>
+            </div>
+          </div>
+          <div class="dash-sec">
+            <div class="dash-sec-title"><span>Crew progress</span><span>Blocks 3–7</span></div>
+            <div class="crew-row"><span><span class="nm">Crew A</span><span class="loc">Block 4 · Gala</span></span><span class="pct">78%</span><span class="bar"><i style="--w:78%"></i></span></div>
+            <div class="crew-row"><span><span class="nm">Crew B</span><span class="loc">Block 7 · Fuji</span></span><span class="pct">54%</span><span class="bar"><i style="--w:54%"></i></span></div>
+            <div class="crew-row"><span><span class="nm">Crew C</span><span class="loc">Packhouse line 2</span></span><span class="pct">91%</span><span class="bar"><i class="gold" style="--w:91%"></i></span></div>
+          </div>
+          <div class="dash-foot">
+            <span class="flag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 8v5m0 3.5v.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>2 quality flags open</span>
+            <span class="flag ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Yield on track</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= TRUST STRIP ============================= -->
+  <section class="trust" aria-label="Who Harvest Flow is built for">
+    <div class="shell trust-inner" data-reveal>
+      <p class="trust-label">Built for teams across the produce supply chain</p>
+      <ul class="trust-roles">
+        <li>Growers</li>
+        <li>Packhouses</li>
+        <li>Co-ops</li>
+        <li>Distributors</li>
+        <li>Exporters</li>
+        <li>Field teams</li>
+        <li>Operations managers</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================= PROBLEM ============================= -->
+  <section class="problem" id="customers">
+    <div class="shell problem-grid">
+      <div>
+        <span class="eyebrow" data-reveal>The operational reality</span>
+        <h2 data-reveal style="--d:80ms">Harvest moves fast. Scattered systems slow it down.</h2>
+        <p class="lede" data-reveal style="--d:160ms">Many teams still coordinate harvest work through paper logs, spreadsheets, calls, and disconnected tools. Every handoff — field to bin, bin to packhouse, packhouse to truck — loses a little information along the way.</p>
+        <ul class="pain-list">
+          <li data-reveal style="--d:220ms"><span class="dot"></span><span><b>Fragmented records.</b> <span>Pick counts live in notebooks, quality notes in someone's head, orders in another system.</span></span></li>
+          <li data-reveal style="--d:300ms"><span class="dot"></span><span><b>Slow visibility.</b> <span>Managers find out about shortfalls and quality issues hours — sometimes days — too late.</span></span></li>
+          <li data-reveal style="--d:380ms"><span class="dot"></span><span><b>Costly handoffs.</b> <span>Every re-key and re-count between field, packhouse, and dispatch invites errors.</span></span></li>
+        </ul>
+        <p class="lede" data-reveal style="--d:460ms">Harvest Flow is the calm operating layer underneath it all — connecting field activity, crew coordination, quality checks, inventory, and shipment readiness in one place.</p>
+      </div>
+      <div class="problem-visual" data-reveal style="--d:200ms">
+        <div class="photo">
+          <img src="https://images.unsplash.com/photo-1573246123716-6b1782bfc499?q=80&w=1600&auto=format&fit=crop" alt="Freshly harvested produce packed into crates" loading="lazy">
+        </div>
+        <div class="feed-card" aria-hidden="true">
+          <div class="feed-title">Field activity → structured data</div>
+          <div class="feed-row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Bin 214 logged</b> · Block 4 · 412 kg</span><time>07:18</time></div>
+          <div class="feed-row"><span class="ico gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 8v5m0 3.5v.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span><span><b>QC flag</b> · bruising · Grade B hold</span><time>07:31</time></div>
+          <div class="feed-row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span><b>Order #1082</b> · staged for dispatch</span><time>07:44</time></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= WORKFLOW BAND ============================= -->
+  <section class="band" id="workflows" aria-label="The Harvest Flow workflow">
+    <ul class="shell band-list">
+      <li data-reveal><div class="band-tile neutral"><span class="step">01</span>Plan<span class="step-preview">Blocks · crews · harvest windows</span></div></li>
+      <li data-reveal style="--d:120ms"><div class="band-tile green"><span class="step">02</span>Pick<span class="step-preview">Live field progress · yield</span></div></li>
+      <li data-reveal style="--d:240ms"><div class="band-tile gold"><span class="step">03</span>Pack<span class="step-preview">QC · lots · inventory movement</span></div></li>
+      <li data-reveal style="--d:360ms"><div class="band-tile ink"><span class="step">04</span>Ship<span class="step-preview">Order readiness · dispatch queue</span></div></li>
+    </ul>
+  </section>
+
+  <!-- ============================= PLATFORM MODULES ============================= -->
+  <section class="modules" id="platform">
+    <div class="shell">
+      <div class="section-head">
+        <span class="eyebrow boxed" data-reveal>Platform</span>
+        <h2 data-reveal style="--d:100ms">One platform for the whole harvest.</h2>
+        <p data-reveal style="--d:180ms">Five connected modules that follow your product from harvest planning to shipment readiness.</p>
+      </div>
+      <div class="module-grid">
+        <article class="module-card ink" data-reveal>
+          <div class="module-top">
+            <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M7.5 14h3M7.5 17h6"/></svg></span>
+            <span class="module-num">01</span>
+          </div>
+          <div class="module-body">
+            <h3>Harvest Planning</h3>
+            <p>Plan blocks, crews, harvest windows, and expected yields before the day begins.</p>
+            <div class="module-tags"><span class="tag">Planning</span><span class="tag">Blocks</span><span class="tag">Forecasts</span></div>
+          </div>
+        </article>
+        <article class="module-card paper" data-reveal style="--d:90ms">
+          <div class="module-top">
+            <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5M16.5 8.8a2.6 2.6 0 1 0 0-.01M15.8 15.4c2.3.3 4 1.9 4.5 4.6"/></svg></span>
+            <span class="module-num">02</span>
+          </div>
+          <div class="module-body">
+            <h3>Crew Coordination</h3>
+            <p>Assign teams, track progress, and keep field activity visible in real time.</p>
+            <div class="module-tags"><span class="tag">Crews</span><span class="tag">Tasks</span><span class="tag">Progress</span></div>
+          </div>
+        </article>
+        <article class="module-card paper" data-reveal style="--d:180ms">
+          <div class="module-top">
+            <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V9M10 20V4M16 20v-9M22 20H2M20.5 4.5 16 9l-3-3-4.5 4.5"/></svg></span>
+            <span class="module-num">03</span>
+          </div>
+          <div class="module-body">
+            <h3>Yield &amp; Quality Tracking</h3>
+            <p>Capture quantities, grades, issues, and quality checks as product moves through the flow.</p>
+            <div class="module-tags"><span class="tag">Yield</span><span class="tag">QC</span><span class="tag">Traceability</span></div>
+          </div>
+        </article>
+        <article class="module-card ink" data-reveal style="--d:270ms">
+          <div class="module-top">
+            <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 17V7a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v10h12zM14 10h4.5L21 13.5V17h-7"/><circle cx="6" cy="18.5" r="1.8"/><circle cx="17" cy="18.5" r="1.8"/></svg></span>
+            <span class="module-num">04</span>
+          </div>
+          <div class="module-body">
+            <h3>Inventory Flow</h3>
+            <p>Track product from field bins to packhouse, cold storage, orders, and dispatch.</p>
+            <div class="module-tags"><span class="tag">Bins</span><span class="tag">Cold store</span><span class="tag">Orders</span></div>
+          </div>
+        </article>
+        <article class="module-card paper" data-reveal style="--d:360ms">
+          <div class="module-top">
+            <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5M4 19h16M8 16v-5M12 16V8M16 16v-3M20 16V7"/><path d="M8 5h9l3 3v8"/></svg></span>
+            <span class="module-num">05</span>
+          </div>
+          <div class="module-body">
+            <h3>Reports &amp; Forecasting</h3>
+            <p>Turn daily harvest activity into yield history, labor insight, and planning data.</p>
+            <div class="module-tags"><span class="tag">Reports</span><span class="tag">Labor</span><span class="tag">Forecasts</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= CAPABILITIES ============================= -->
+  <section class="caps">
+    <div class="shell">
+      <div class="caps-head">
+        <span class="eyebrow" data-reveal>Capabilities</span>
+        <h2 data-reveal style="--d:100ms">Built for the rhythm of harvest operations.</h2>
+      </div>
+      <ul>
+        <li class="cap-row" data-reveal>
+          <a class="cap-link" href="#insights">
+            <span class="cap-idx">01</span>
+            <span class="cap-title">Real-time harvest tracking</span>
+            <span class="cap-desc">See what is being picked, where, by whom, and what is ready next.</span>
+            <span class="cap-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="cap-desc-mobile">See what is being picked, where, by whom, and what is ready next.</span>
+          </a>
+        </li>
+        <li class="cap-row" data-reveal style="--d:80ms">
+          <a class="cap-link" href="#insights">
+            <span class="cap-idx">02</span>
+            <span class="cap-title">Crew scheduling</span>
+            <span class="cap-desc">Coordinate people, tasks, locations, and timing without chasing updates.</span>
+            <span class="cap-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="cap-desc-mobile">Coordinate people, tasks, locations, and timing without chasing updates.</span>
+          </a>
+        </li>
+        <li class="cap-row" data-reveal style="--d:160ms">
+          <a class="cap-link" href="#insights">
+            <span class="cap-idx">03</span>
+            <span class="cap-title">Quality inspection logs</span>
+            <span class="cap-desc">Record defects, grades, and quality notes before small issues become expensive ones.</span>
+            <span class="cap-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="cap-desc-mobile">Record defects, grades, and quality notes before small issues become expensive ones.</span>
+          </a>
+        </li>
+        <li class="cap-row" data-reveal style="--d:240ms">
+          <a class="cap-link" href="#insights">
+            <span class="cap-idx">04</span>
+            <span class="cap-title">Inventory movement</span>
+            <span class="cap-desc">Track product from field bins to packhouse, cold storage, orders, and dispatch.</span>
+            <span class="cap-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="cap-desc-mobile">Track product from field bins to packhouse, cold storage, orders, and dispatch.</span>
+          </a>
+        </li>
+        <li class="cap-row" data-reveal style="--d:320ms">
+          <a class="cap-link" href="#insights">
+            <span class="cap-idx">05</span>
+            <span class="cap-title">Reports and forecasting</span>
+            <span class="cap-desc">Turn daily activity into clearer yield history, labor insight, and planning data.</span>
+            <span class="cap-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="cap-desc-mobile">Turn daily activity into clearer yield history, labor insight, and planning data.</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================= INSIGHTS / DASHBOARD ============================= -->
+  <section class="insights" id="insights">
+    <div class="shell">
+      <div class="section-head">
+        <span class="eyebrow boxed" data-reveal>Insights</span>
+        <h2 data-reveal style="--d:100ms">Your whole operation, on one screen.</h2>
+        <p data-reveal style="--d:180ms">The Harvest Flow dashboard turns field activity into a live operational picture — no radio round-robin, no end-of-day surprises.</p>
+      </div>
+
+      <div class="board" data-reveal style="--d:150ms">
+        <div class="board-chrome">
+          <div class="crumbs">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M24 4c1 10 6 17 18 20-12 3-17 10-18 20-1-10-6-17-18-20 12-3 17-10 18-20z"/></svg>
+            <span><b>Willow Creek Farms</b> · Operations overview</span>
+          </div>
+          <div class="chips" aria-hidden="true"><span class="chip on">Today</span><span class="chip">Week</span><span class="chip">Season</span></div>
+        </div>
+        <div class="board-grid">
+
+          <div class="tile" data-reveal>
+            <div class="tile-head"><span class="t">Harvest Overview</span><span class="badge">On plan</span></div>
+            <div class="big">18.4<small> t</small><em>+12%</em></div>
+            <div class="chart-wrap chart-line"><canvas id="harvestProgressChart" aria-label="Harvest progress line chart"></canvas></div>
+            <div class="rows"><div class="r"><span class="sub">Picked across 5 blocks · 3 crews · 46 bins</span></div></div>
+          </div>
+
+          <div class="tile" data-reveal style="--d:70ms">
+            <div class="tile-head"><span class="t">Crew Schedule</span><span class="badge">3 active</span></div>
+            <div class="rows">
+              <div class="r"><b>Crew A</b><span class="sub">Block 4</span><span class="minibar"><i style="width:78%"></i></span><span class="end">78%</span></div>
+              <div class="r"><b>Crew B</b><span class="sub">Block 7</span><span class="minibar"><i style="width:54%"></i></span><span class="end">54%</span></div>
+              <div class="r"><b>Crew C</b><span class="sub">Line 2</span><span class="minibar"><i style="width:91%;background:var(--gold)"></i></span><span class="end">91%</span></div>
+              <div class="r"><b>Crew D</b><span class="sub">Rest day</span><span class="minibar"><i style="width:0%"></i></span><span class="end">—</span></div>
+            </div>
+          </div>
+
+          <div class="tile" data-reveal style="--d:140ms">
+            <div class="tile-head"><span class="t">Block Performance</span><span class="badge">t / block</span></div>
+            <div class="chart-wrap"><canvas id="yieldByBlockChart" aria-label="Yield by block bar chart"></canvas></div>
+            <div class="rows"><div class="r"><span class="sub">Block 4 leading at 4.1 t · forecast 4.3 t</span></div></div>
+          </div>
+
+          <div class="tile" data-reveal style="--d:210ms">
+            <div class="tile-head"><span class="t">QC Exceptions</span><span class="badge warn">2 open</span></div>
+            <div class="chart-wrap chart-doughnut"><canvas id="qualityDistributionChart" aria-label="Quality distribution doughnut chart"></canvas></div>
+            <div class="rows">
+              <div class="r"><span class="status-dot y"></span><b>Bruising</b><span class="sub">Block 3 · Grade B hold</span><span class="end">07:31</span></div>
+              <div class="r"><span class="status-dot y"></span><b>Undersize</b><span class="sub">Bin 214 · re-grade</span><span class="end">08:02</span></div>
+              <div class="r"><span class="status-dot g"></span><b>Brix check</b><span class="sub">Block 4 · passed</span><span class="end">06:55</span></div>
+              <div class="r"><span class="status-dot g"></span><b>Pressure test</b><span class="sub">Line 2 · passed</span><span class="end">06:20</span></div>
+            </div>
+          </div>
+
+          <div class="tile" data-reveal style="--d:280ms">
+            <div class="tile-head"><span class="t">Batch Traceability</span><span class="badge">Lot HF-214</span></div>
+            <div class="rows">
+              <div class="r"><span class="status-dot g"></span><b>Picked</b><span class="sub">Block 4 · Crew A</span><span class="end">06:42</span></div>
+              <div class="r"><span class="status-dot g"></span><b>QC check</b><span class="sub">Grade A · brix passed</span><span class="end">07:10</span></div>
+              <div class="r"><span class="status-dot y"></span><b>Cold store</b><span class="sub">Pallets 12-18</span><span class="end">08:05</span></div>
+              <div class="r"><span class="status-dot n"></span><b>Order link</b><span class="sub">#1084 export</span><span class="end">Next</span></div>
+            </div>
+          </div>
+
+          <div class="tile" data-reveal style="--d:280ms">
+            <div class="tile-head"><span class="t">Shipment Queue</span><span class="badge">6 of 8</span></div>
+            <div class="chart-wrap chart-line"><canvas id="shipmentReadinessChart" aria-label="Shipment readiness chart"></canvas></div>
+            <div class="rows">
+              <div class="r"><span class="status-dot g"></span><b>#1082</b><span class="sub">Fresh Direct · 14 pallets</span><span class="end">Ready</span></div>
+              <div class="r"><span class="status-dot g"></span><b>#1083</b><span class="sub">Metro Grocers · 9 pallets</span><span class="end">Ready</span></div>
+              <div class="r"><span class="status-dot y"></span><b>#1084</b><span class="sub">Export · 22 pallets</span><span class="end">Packing</span></div>
+              <div class="r"><span class="status-dot n"></span><b>#1085</b><span class="sub">Regional DC · 11 pallets</span><span class="end">Sched.</span></div>
+            </div>
+          </div>
+
+          <div class="tile" data-reveal style="--d:350ms">
+            <div class="tile-head"><span class="t">Inventory by Status</span><span class="badge">Cold store</span></div>
+            <div class="ring-wrap">
+              <div class="chart-wrap chart-doughnut"><canvas id="inventoryStatusChart" aria-label="Inventory status chart"></canvas></div>
+              <div class="ring-meta"><b>72% capacity</b>128 pallets in cold storage<br>36 staged for dispatch</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= USE CASES ============================= -->
+  <section class="usecases" id="use-cases">
+    <div class="shell">
+      <div class="section-head">
+        <span class="eyebrow boxed" data-reveal>Use cases</span>
+        <h2 data-reveal style="--d:100ms">Useful for every team touching the harvest.</h2>
+        <p data-reveal style="--d:180ms">Harvest Flow keeps each role focused on the next right decision, with the same live operating data underneath.</p>
+      </div>
+      <div class="usecase-grid">
+        <article class="usecase-card" data-reveal>
+          <div class="usecase-top">
+            <span class="usecase-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-7h6v7"/></svg></span>
+            <span class="usecase-num">01</span>
+          </div>
+          <h3>Farm managers</h3>
+          <p>See block readiness, labor allocation, expected yield, and daily progress without waiting for end-of-day reports.</p>
+        </article>
+        <article class="usecase-card" data-reveal style="--d:80ms">
+          <div class="usecase-top">
+            <span class="usecase-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-8 0v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M20 8v6M23 11h-6"/></svg></span>
+            <span class="usecase-num">02</span>
+          </div>
+          <h3>Crew supervisors</h3>
+          <p>Assign teams, record pick counts, and surface field blockers while work is still happening.</p>
+        </article>
+        <article class="usecase-card" data-reveal style="--d:160ms">
+          <div class="usecase-top">
+            <span class="usecase-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18M5 9V5h14v4M6 9v10h12V9M9 13h6"/></svg></span>
+            <span class="usecase-num">03</span>
+          </div>
+          <h3>Packhouse teams</h3>
+          <p>Know what is arriving from the field, what is packed, and what needs cold storage or staging.</p>
+        </article>
+        <article class="usecase-card" data-reveal style="--d:240ms">
+          <div class="usecase-top">
+            <span class="usecase-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 12 2 2 4-5M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20"/></svg></span>
+            <span class="usecase-num">04</span>
+          </div>
+          <h3>Quality controllers</h3>
+          <p>Capture defects, grades, lot notes, and exceptions before product moves too far downstream.</p>
+        </article>
+        <article class="usecase-card" data-reveal style="--d:320ms">
+          <div class="usecase-top">
+            <span class="usecase-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a1 1 0 0 0-1-1H3v13h11ZM14 9h4l3 4v5h-7"/><circle cx="6.5" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg></span>
+            <span class="usecase-num">05</span>
+          </div>
+          <h3>Logistics teams</h3>
+          <p>Prepare shipments with a live view of inventory status, staged orders, and dispatch readiness.</p>
+        </article>
+        <article class="usecase-card" data-reveal style="--d:400ms">
+          <div class="usecase-top">
+            <span class="usecase-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5M4 19h16M8 16v-4M12 16V8M16 16v-6"/></svg></span>
+            <span class="usecase-num">06</span>
+          </div>
+          <h3>Owners/operators</h3>
+          <p>Turn daily harvest activity into cleaner labor, yield, quality, and fulfillment decisions.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= STATS ============================= -->
+  <section class="stats">
+    <div class="shell">
+      <div class="stats-panel" data-reveal>
+        <span class="eyebrow light">Designed for outcomes</span>
+        <h2 data-reveal style="--d:100ms">Less chasing. More knowing. One connected flow.</h2>
+        <div class="stats-grid" id="statsGrid">
+          <div data-reveal>
+            <div class="stat-num"><span data-count="30">0</span><span class="suffix">%</span></div>
+            <p class="stat-label">example goal for reducing harvest reporting delays</p>
+          </div>
+          <div data-reveal style="--d:90ms">
+            <div class="stat-num"><span data-count="24">0</span><span class="suffix">/7</span></div>
+            <p class="stat-label">live visibility across crews, blocks, and packhouse lines</p>
+          </div>
+          <div data-reveal style="--d:180ms">
+            <div class="stat-num"><span data-count="100">0</span><span class="suffix">%</span></div>
+            <p class="stat-label">traceable batch target from bin tag to outbound order</p>
+          </div>
+          <div data-reveal style="--d:270ms">
+            <div class="stat-num"><span data-count="1">0</span></div>
+            <p class="stat-label">connected workflow for daily harvest operations</p>
+          </div>
+        </div>
+        <p class="stats-note" data-reveal style="--d:350ms">Example outcomes Harvest Flow is designed to support — actual results depend on your crops, crews, and current workflows.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="footer" id="contact">
+  <div class="shell footer-inner">
+    <div class="footer-cta">
+      <div>
+        <h2 data-reveal>Bring your harvest operation into one clear flow.</h2>
+        <p data-reveal style="--d:120ms">See how Harvest Flow connects field teams, packhouse work, inventory, quality, and shipments in one calm operating layer.</p>
+      </div>
+      <div data-reveal style="--d:200ms">
+        <button class="btn btn-light" data-modal-open>Request demo
+          <span class="btn-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-brand-col">
+        <a class="brand" href="#home">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M24 4c1 10 6 17 18 20-12 3-17 10-18 20-1-10-6-17-18-20 12-3 17-10 18-20z"/></svg>
+          Harvest&nbsp;Flow
+        </a>
+        <p>The harvest operations platform for farms, packhouses, growers, and produce logistics teams.</p>
+      </div>
+      <nav class="footer-col" aria-label="Platform">
+        <h3>Platform</h3>
+        <ul>
+          <li><a href="#platform">Harvest Planning</a></li>
+          <li><a href="#platform">Crew Coordination</a></li>
+          <li><a href="#platform">Quality Tracking</a></li>
+          <li><a href="#platform">Inventory Flow</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Workflows">
+        <h3>Workflows</h3>
+        <ul>
+          <li><a href="#workflows">Field Teams</a></li>
+          <li><a href="#workflows">Packhouses</a></li>
+          <li><a href="#workflows">Growers</a></li>
+          <li><a href="#workflows">Distributors</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Company">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#customers">About</a></li>
+          <li><a href="#customers">Customers</a></li>
+          <li><a href="#insights">Insights</a></li>
+          <li><button data-modal-open>Contact</button></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Legal">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#terms">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-legal">
+      <span>© 2026 Harvest Flow. All rights reserved.</span>
+      <span class="links"><a href="#privacy">Privacy</a><a href="#terms">Terms</a></span>
+    </div>
+  </div>
+  <div class="footer-watermark" aria-hidden="true">HARVEST&nbsp;FLOW</div>
+</footer>
+
+<!-- ============================= MOBILE NAV OVERLAY ============================= -->
+<div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Site navigation" hidden>
+  <div class="nav-overlay-top">
+    <span class="brand">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M24 4c1 10 6 17 18 20-12 3-17 10-18 20-1-10-6-17-18-20 12-3 17-10 18-20z"/></svg>
+      Harvest&nbsp;Flow
+    </span>
+    <button class="nav-close" id="navClose">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20"/></svg>
+      Close
+    </button>
+  </div>
+  <nav aria-label="Mobile">
+    <a href="#platform" style="--d:80ms"><span class="idx">01</span>Platform</a>
+    <a href="#workflows" style="--d:125ms"><span class="idx">02</span>Workflows</a>
+    <a href="#insights" style="--d:170ms"><span class="idx">03</span>Insights</a>
+    <a href="#customers" style="--d:215ms"><span class="idx">04</span>Customers</a>
+    <a href="#contact" data-modal-open style="--d:260ms"><span class="idx">05</span>Contact</a>
+  </nav>
+  <div class="nav-overlay-bottom">
+    <span>From field to shipment</span>
+    <button data-modal-open>Request demo →</button>
+  </div>
+</div>
+
+<!-- ============================= REQUEST DEMO MODAL ============================= -->
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close dialog">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20"/></svg>
+    </button>
+
+    <div class="modal-head">
+      <span class="modal-eyebrow">Request a demo</span>
+      <h2 id="modalTitle">See Harvest Flow on your operation.</h2>
+    </div>
+
+    <form id="demoForm" novalidate>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="f-email">Work email</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="you@farm.com">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-company">Farm or company</label>
+          <input id="f-company" name="company" type="text" required autocomplete="organization" placeholder="Willow Creek Farms">
+        </div>
+        <div class="field">
+          <label for="f-role">Role</label>
+          <input id="f-role" name="role" type="text" required autocomplete="organization-title" placeholder="Operations manager">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-type">Operation type</label>
+          <select id="f-type" name="type" required>
+            <option value="" selected disabled>Select…</option>
+            <option>Grower / Farm</option>
+            <option>Packhouse</option>
+            <option>Co-op</option>
+            <option>Distributor</option>
+            <option>Exporter</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-challenge">Main challenge</label>
+          <select id="f-challenge" name="challenge" required>
+            <option value="" selected disabled>Select…</option>
+            <option>Harvest planning</option>
+            <option>Crew coordination</option>
+            <option>Yield reporting</option>
+            <option>Quality control</option>
+            <option>Inventory movement</option>
+            <option>Shipment readiness</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-msg">Message</label>
+        <textarea id="f-msg" name="message" rows="4" placeholder="Tell us about your crops, season, and what you'd like to coordinate better."></textarea>
+      </div>
+      <div class="modal-foot">
+        <span class="note">We reply within one business day.</span>
+        <button class="btn btn-dark" type="submit" id="submitBtn">
+          <span id="submitLabel">Send request</span>
+          <span class="btn-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </button>
+      </div>
+    </form>
+
+    <div class="modal-success" aria-live="polite">
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+      <h2>Demo request received.</h2>
+      <p>We'll be in touch shortly.</p>
+      <button class="btn btn-dark btn-plain" id="successClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.171.0/build/three.module.js"
+  }
+}
+</script>
+<script type="module" src="./src/scripts/main.js"></script>
+</body>
+</html>

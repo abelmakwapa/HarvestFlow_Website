@@ -1,0 +1,38 @@
+/* ============================= TOKENS ============================= */
+:root{
+  --paper:#F0EDE8;          /* app canvas */
+  --paper-2:#FAFAF8;        /* app surface */
+  --paper-3:#F5EDD6;        /* earth light */
+  --ink:#111111;            /* app black */
+  --ink-2:#084D3A;
+  --green:#0F6E56;          /* app primary */
+  --green-deep:#084D3A;
+  --sage:#1A8A6C;
+  --sage-soft:#E6F4EA;
+  --gold:#D4830A;
+  --gold-soft:#FEF3C7;
+  --red:#C5221F;
+  --red-soft:#FCE8E6;
+  --blue:#1A73E8;
+  --blue-soft:#E8F0FE;
+  --purple:#7C4DFF;
+  --purple-soft:#EDE7F6;
+  --line:#DADCE0;
+  --muted:#5F6368;
+  --muted-2:#777b80;
+  --r-pill:9999px;
+  --r-card:.5rem;
+  --r-card-sm:.375rem;
+  --r-control:.25rem;
+  --shell:82rem;
+  --ease-out:cubic-bezier(.215,.61,.355,1);
+  --ease-spring:cubic-bezier(.22,1,.36,1);
+  --shadow-pixel:4px 4px 0 0 var(--ink);
+  --shadow-pixel-sm:2px 2px 0 0 var(--ink);
+  --shadow-pixel-lg:6px 6px 0 0 var(--ink);
+  --shadow-green:4px 4px 0 0 var(--green-deep);
+  --shadow-amber:4px 4px 0 0 var(--gold);
+  --font-head:'Space Grotesk',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
