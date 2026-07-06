@@ -5,9 +5,31 @@ farms, packhouses, co-ops, and produce logistics teams plan crews, track
 yields, monitor quality, manage inventory, and prepare shipments from one
 operating layer.
 
-This is currently a **static site** (no build step, no framework). It is
-structured so it can go through a later full retro-pixel visual overhaul
-without another structural rewrite.
+This is currently a **static site** (no build step, no framework).
+
+## Design system
+
+The UI is a mature **retro-pixel agricultural operations OS** — a serious
+harvest-operations platform presented as a polished pixel operating system.
+The visual language (defined in `src/styles/`) is built from:
+
+- Square / near-square corners (`--r-card: 0`, `--r-control: 2px`)
+- Hard offset pixel shadows with zero blur (`--shadow-pixel*`)
+- Deep-black / deep-green crisp outlines (2–3px)
+- A faint blueprint **grid overlay** on the paper canvas and dark panels
+- **Scanline** textures on dark command surfaces (dashboard board, footer)
+- Segmented **pixel progress bars** and square sprite-style status markers
+- Mono operational labels/badges, a geometric display face for headings
+- Tactile pressed states on every button (translate + shrinking shadow)
+
+Palette: deep crop green, leaf green, harvest amber, wheat gold, soil brown,
+warm off-white canvas, sky blue (informational), tomato red (QC/alerts only).
+Type: Space Grotesk (display headings), JetBrains Mono (metrics/labels/data),
+Inter (body copy).
+
+The product **dashboard panels** (hero card + the Insights command board) are
+the primary visual signal. Advanced Three.js / Chart.js / animation work is
+intentionally left as isolated module hooks for a later phase.
 
 ## Tech stack
 
@@ -90,9 +112,11 @@ renders without touching loader/nav/modal logic.
 
 ## Future optional sound effects
 
-`assets/audio/` is reserved for short, optional UI sound effects (e.g. modal
-open/close, menu toggle) that may be added in a later phase. Any sound
-effects added later should be:
+A **sound-toggle placeholder** button already lives in the header
+(`#soundToggle`, currently `disabled`) so the future control has a reserved
+home in the pixel UI. `assets/audio/` is reserved for short, optional UI sound
+effects (e.g. modal open/close, menu toggle) that may be added in a later
+phase. Any sound effects added later should be:
 - opt-in / muted by default, with a visible mute toggle
 - skipped entirely when `prefers-reduced-motion: reduce` is set
 - kept small (compressed, < 50KB each) since they load over the network

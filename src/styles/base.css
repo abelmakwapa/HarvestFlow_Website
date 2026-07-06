@@ -1,16 +1,44 @@
-/* ============================= RESET ============================= */
+/* ============================================================
+   BASE — reset, typography, global surface, utilities
+   ============================================================ */
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 html.locked{overflow:hidden;height:100%}
-body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:1rem;line-height:1.6;overflow-x:hidden}
+
+body{
+  /* warm canvas + faint blueprint grid: the "operations OS" surface */
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--grid-line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:var(--grid-size) var(--grid-size);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:1rem;
+  line-height:1.62;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 ul{list-style:none}
 img{display:block;max-width:100%}
-h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.08;letter-spacing:0}
+svg{display:block}
+
+h1,h2,h3{font-family:var(--font-head);font-weight:700;line-height:1.04;letter-spacing:-.012em}
+
+::selection{background:var(--gold-2);color:var(--ink)}
+
+/* accessibility helpers */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:var(--r-control)}
-.skip-link{position:fixed;left:1rem;top:-4rem;z-index:200;background:var(--ink);color:#fff;padding:.6rem 1.1rem;border-radius:var(--r-control);font-size:.875rem;transition:top .25s var(--ease-out)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+
+.skip-link{position:fixed;left:1rem;top:-4rem;z-index:200;border:3px solid var(--ink);background:var(--gold-2);color:var(--ink);padding:.6rem 1.1rem;font-family:var(--font-mono);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;box-shadow:var(--shadow-pixel);transition:top .2s var(--ease-out)}
 .skip-link:focus{top:1rem}
 
 .shell{max-width:var(--shell);margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
+
+/* reusable pixel dashed rule (stepped/segmented divider) */
+.pixel-rule{height:4px;border:0;background-image:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 16px)}

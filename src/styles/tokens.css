@@ -1,38 +1,70 @@
-/* ============================= TOKENS ============================= */
+/* ============================================================
+   TOKENS — Harvest Flow pixel operations OS
+   A mature retro-pixel design language:
+   square corners, hard offset shadows, grid + scanline surfaces.
+   ============================================================ */
 :root{
-  --paper:#F0EDE8;          /* app canvas */
-  --paper-2:#FAFAF8;        /* app surface */
-  --paper-3:#F5EDD6;        /* earth light */
-  --ink:#111111;            /* app black */
-  --ink-2:#084D3A;
-  --green:#0F6E56;          /* app primary */
-  --green-deep:#084D3A;
-  --sage:#1A8A6C;
-  --sage-soft:#E6F4EA;
-  --gold:#D4830A;
-  --gold-soft:#FEF3C7;
-  --red:#C5221F;
-  --red-soft:#FCE8E6;
-  --blue:#1A73E8;
-  --blue-soft:#E8F0FE;
-  --purple:#7C4DFF;
-  --purple-soft:#EDE7F6;
-  --line:#DADCE0;
-  --muted:#5F6368;
-  --muted-2:#777b80;
-  --r-pill:9999px;
-  --r-card:.5rem;
-  --r-card-sm:.375rem;
-  --r-control:.25rem;
-  --shell:82rem;
-  --ease-out:cubic-bezier(.215,.61,.355,1);
-  --ease-spring:cubic-bezier(.22,1,.36,1);
+  /* ---- canvas / paper (warm off-white) ---- */
+  --paper:#EDE7D6;          /* app canvas */
+  --paper-2:#F6F1E4;        /* raised surface */
+  --paper-3:#E1D6BC;        /* sunk surface / bar tracks */
+  --paper-line:#D3C7AA;     /* hairline on paper */
+
+  /* ---- ink (warm near-black) ---- */
+  --ink:#16160F;            /* structural black */
+  --ink-2:#0A4535;          /* deep-green ink alt */
+  --ink-soft:#33322A;
+
+  /* ---- greens ---- */
+  --green:#0F6E56;          /* leaf / primary */
+  --green-deep:#0A4535;     /* deep crop green */
+  --green-darker:#06301F;   /* boot / darkest field */
+  --sage:#2E9E6E;
+  --sage-soft:#D7E7CE;      /* pale green fill */
+
+  /* ---- amber / gold / soil ---- */
+  --gold:#D4830A;           /* harvest amber */
+  --gold-2:#F1C453;         /* wheat gold */
+  --gold-soft:#F2E2B4;
+  --soil:#7A5227;           /* soil brown */
+  --soil-deep:#4A3218;
+
+  /* ---- info / alert ---- */
+  --blue:#2563A8;           /* sky blue — informational */
+  --blue-soft:#D3E1F1;
+  --red:#C5221F;            /* tomato — alerts / QC exceptions */
+  --red-soft:#F1D4CE;
+
+  --muted:#59584C;
+  --muted-2:#84826F;
+
+  /* ---- geometry: square / near-square corners ---- */
+  --r-pill:2px;
+  --r-card:0px;
+  --r-card-sm:0px;
+  --r-control:2px;
+  --shell:84rem;
+
+  /* ---- hard pixel shadows (zero blur) ---- */
   --shadow-pixel:4px 4px 0 0 var(--ink);
   --shadow-pixel-sm:2px 2px 0 0 var(--ink);
   --shadow-pixel-lg:6px 6px 0 0 var(--ink);
   --shadow-green:4px 4px 0 0 var(--green-deep);
-  --shadow-amber:4px 4px 0 0 var(--gold);
-  --font-head:'Space Grotesk',sans-serif;
-  --font-body:'Inter',sans-serif;
-  --font-mono:'JetBrains Mono',monospace;
+  --shadow-amber:4px 4px 0 0 var(--soil-deep);
+
+  /* ---- surface textures ---- */
+  --grid-line:rgba(10,69,53,.09);       /* blueprint grid on paper */
+  --grid-line-dark:rgba(255,255,255,.05);
+  --grid-size:26px;
+  --scanline:rgba(0,0,0,.14);
+
+  /* ---- motion ---- */
+  --ease-out:cubic-bezier(.2,.7,.3,1);
+  --ease-spring:cubic-bezier(.22,1,.36,1);
+  --ease-step:steps(1,end);
+
+  /* ---- type ---- */
+  --font-head:'Space Grotesk',sans-serif; /* bold geometric display */
+  --font-body:'Inter',sans-serif;         /* readable body */
+  --font-mono:'JetBrains Mono',monospace; /* metrics / labels / data */
 }
